@@ -12,4 +12,8 @@ export class UsuarioController{
         return dadosDoUsuario;
     }
 
+    @Get()
+    listUsuarios(){
+        return this.usuarioRepository.listar();
+    }
 }
