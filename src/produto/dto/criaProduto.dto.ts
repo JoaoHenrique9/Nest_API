@@ -1,5 +1,5 @@
 import { Type } from "class-transformer";
-import { ArrayMinSize, IsArray, IsDateString, IsNotEmpty, IsNumber, IsString, IsUrl, MaxLength, Min, ValidateNested } from "class-validator";
+import { ArrayMinSize, IsArray, IsDateString, IsNotEmpty, IsNumber, IsString, IsUUID, IsUrl, MaxLength, Min, ValidateNested } from "class-validator";
 
 export class CaracteristicaProdutoDTO {
   @IsString()
@@ -32,6 +32,9 @@ export class CriaProdutoDTO {
   @IsNumber()
   @Min(0, { message: 'Quantidade mínima inválida' })
   quantidade: number;
+
+  @IsUUID(undefined, { message: 'ID de usuário inválido' })
+  usuarioId: string;
 
   @IsString()
   @IsNotEmpty({ message: 'Descrição do produto não pode ser vazia ' })
