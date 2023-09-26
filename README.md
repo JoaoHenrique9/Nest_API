@@ -45,7 +45,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+<!-- ## Test
 
 ```bash
 # unit tests
@@ -71,4 +71,4 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
-# Nest_API
+# Nest_API -->
