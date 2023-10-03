@@ -4,6 +4,7 @@ import { ListaUsuarioDTO } from './dto/ListaUsuario.dto';
 import { UsuarioEntity } from './usuario.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
+import { AtualizaUsuarioDTO } from './dto/atualizaUsuario.dto';
 
 @Injectable()
 export class UsuarioService {
@@ -19,5 +20,17 @@ export class UsuarioService {
         );
 
         return usuariosLista;
+    }
+
+    async criaUsuario(usuarioEntity: UsuarioEntity) {
+        await this.usuarioRepository.save(usuarioEntity);
+    }
+
+    async atualizaUsuario(id: string, usuarioEntity: AtualizaUsuarioDTO) {
+        await this.usuarioRepository.update(id, usuarioEntity);
+    }
+
+    async deletaUsuario(id: string) {
+        await this.usuarioRepository.delete(id);
     }
 }
