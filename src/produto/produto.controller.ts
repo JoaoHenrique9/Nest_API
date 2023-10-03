@@ -4,11 +4,15 @@ import { CriaProdutoDTO } from "./dto/criaProduto.dto";
 import { v4 as uuid } from "uuid";
 import { AtualizaProdutoDTO } from "./dto/AtualizaProduto.dto";
 import { ProdutoEntity } from "./produto.entity";
+import { ProdutoService } from "./produto.service";
 
 @Controller('/produtos')
 export class ProdutoController {
 
-    constructor(private produtoRepository: ProdutoRepository) { }
+    constructor(
+        private produtoRepository: ProdutoRepository,
+        private produtoService: ProdutoService
+    ) { }
 
     @Post()
     criarProduto(@Body() dadosProduto: CriaProdutoDTO) {
@@ -24,7 +28,7 @@ export class ProdutoController {
         // produto.caracteristicas = dadosProduto.caracteristicas;
         // produto.imagens = dadosProduto.imagens;
 
-        const produtoCadastrado = this.produtoRepository.salva(produto);
+        const produtoCadastrado = this.produtoService.criaProduto(produto);
         return produtoCadastrado;
     }
 
