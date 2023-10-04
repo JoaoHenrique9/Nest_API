@@ -28,7 +28,9 @@ export class ProdutoService {
                                 produto.valor,
                                 produto.quantidade,
                                 produto.descricao,
-                                produto.categoria)
+                                produto.categoria,
+                                produto.caracteristicas,
+                                produto.imagens)
                 );
 
                 return produtosLista;

@@ -1,15 +1,15 @@
-// class ListaCaracteristicaProdutoDTO {
-//     nome: string;
-//     descricao: string;
-// }
+class ListaCaracteristicaProdutoDTO {
+    nome: string;
+    descricao: string;
+}
 
-// class ListaImagemProdutoDTO {
-//     url: string;
-//     descricao: string;
-// }
+class ListaImagemProdutoDTO {
+    url: string;
+    descricao: string;
+}
 
 export class ListaProdutoDTO {
-  
+
     constructor(
         readonly id: string,
         readonly usuarioId: string,
@@ -17,9 +17,10 @@ export class ListaProdutoDTO {
         readonly valor: number,
         readonly quantidade: number,
         readonly descricao: string,
-        readonly categoria: string
-    ){}
+        readonly categoria: string,
+        readonly caracteristicas: ListaCaracteristicaProdutoDTO[],
+        readonly imagens: ListaImagemProdutoDTO[]
+    ) { }
 
-    // caracteristicas: ListaCaracteristicaProdutoDTO[];
-    // imagens: ListaImagemProdutoDTO[];
+
 }

@@ -10,7 +10,6 @@ import { ProdutoService } from "./produto.service";
 export class ProdutoController {
 
     constructor(
-        private produtoRepository: ProdutoRepository,
         private produtoService: ProdutoService
     ) { }
 
